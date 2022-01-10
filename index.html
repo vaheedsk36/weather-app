@@ -1,196 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App </title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <header class="nav-bar">
       <div class="container">
-        <div class="logo"><img src="images/page-logo.png" alt="" srcset=""></div>
-        <div class="search-menu">
-            <input type="text" class ="search-bar" id="search-bar" name="search-content" placeholder="Find your location">
-            <button class="search-btn">Find</button>
+        <div class="logo">
+          <img src="images/page-logo.png" alt="" srcset="" />
         </div>
-        <div class="list">
-            <ul>
-                <li></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+
+        <div class="search-menu">
+          <input
+            type="text"
+            class="search-bar"
+            id="search-bar"
+            name="search-content"
+            placeholder="Find your location"
+          />
+          <button class="search-btn">Find</button>
+        </div>
+
+        <div>
+          <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
       </div>
     </header>
-    <div class="bg-img">
 
-       <section class="place">
-        <h1 id="location">New York</h1>
-       </section>
-       <section class="weather-display">
-           <div class="weather-container">
-               <div class="temp-card active-dimension" id="monday-card">
-                   <h3 class="day" id="day-0">Monday</h3>
-                   <div class="monday-temp">
-                   <h4>28 March</h4>
+    <div class="main-container">
+      <div class="current">
+        <div class="current-forecast">
+          <div class="current-weather">
+            <div class="city-date">
+              <h1 class="city"></h1>
+              <h3 class="date-time">September 25,2021</h3>
+            </div>
+            <div class="weather-image">
+              <img id="descImg" />
+              <h2 class="weather-details">Cloudy</h2>
+            </div>
+          </div>
 
-                   <div class="temp-log">
-                          <div class="temperatures">
-                              <img src="images/temp.svg" id="temp-img">
-                              
-                              <div class="additionals">
-                                  <h1 class="temp-main"><span id="temp-0"></span>&deg;C</h1>
-                                  <div class="min-max-temp">
-                                  <h3 >&UpArrow; <span id="max-temp-0">X</span> &deg;C</h3>
-                                  <h3>&DownArrow; <span id="min-temp-0">X</span> &deg;C</h3>
-                                  </div>
-                                </div>
-                          </div>
-                          <div class="bottom-container">
-                            <div class="img-desc">
-                                <img src="#" id="img-0">
-                                <h3 id="desc">XXX</h3>
-                              </div>
-                              <div class="other-data">
-                                  <h3>Humidity:<span id="humidity-0"> X</span>%</h3>
-                                  <h3>Wind Speed: <span id="wind-0"> X</span> Kmph</h3>
-                                  <h3>Wind Degree: <span id="wind-deg-0"> X</span> &deg;</h3>
-                                  <h3>Pressure: <span id="pressure-0"> X</span> mb</h3>
-                              </div>
-                          </div>
+          <div class="temperature">
+            <h1><span class="current-temp">72</span>&deg;</h1>
+            <h3>
+              <span class="cur-max-temp">81</span>&deg; /
+              <span class="cur-min-temp">50</span>&deg;
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="details-navigator">
+        <ul class="details-bar">
+          <li class="nav-col"><a href="" id="day0">Monday</a></li>
+          <li class="nav-col"><a href="" id="day1">Tuesday</a></li>
+          <li class="nav-col"><a href="" id="day2">Wednesday</a></li>
+          <li class="nav-col"><a href="" id="day3">Thursday</a></li>
+          <li class="nav-col"><a href="" id="day4">Friday</a></li>
+          <li class="nav-col"><a href="" id="day5">Saturday</a></li>
+          <li class="nav-col"><a href="" id="day6">Sunday</a></li>
+        </ul>
+      </div>
 
-                      </div>
-                      
-                   </div>
-               </div>
-   
-               <div class="temp-card" id="tuesday-card">
-                   <h3 class="day" id="day-1">Tuesday</h3>
-                   <div class="monday-temp">
-                      <div class="temp-log">
-                        <h1 ><span id="temp-1"></span>&deg;C</h1>
-                          <img src="#" id="img-1">
-                          <div class="add-other">
-                                <h3 >&UpArrow; <span id="max-temp-2">X</span> &deg;C</h3>
-                                <h3>&DownArrow; <span id="min-temp-1">X</span> &deg;C</h3>
-                                <h3>H:<span id="humidity-1"> X</span>%</h3>
-                                <h3>S: <span id="wind-1"> X</span> Kmph</h3>
-                                <h3>WD: <span id="wind-deg-1"> X</span> &deg;</h3>
-                                <h3>P: <span id="pressure-1"> X</span> mb</h3>
-                          </div>
-                      </div>
-                      
-                   </div>
-               </div>
-   
-               <div class="temp-card" id="wednesday-card">
-                <h3 class="day" id="day-2">Wednesday</h3>
-                   <div class="monday-temp">
-                      <div class="temp-log">
-                        <h1 ><span id="temp-2"></span>&deg;C</h1>
-                          <img src="#" id="img-2">
-                          <div class="add-other">
-                            <h3 >&UpArrow; <span id="max-temp-2">X</span> &deg;C</h3>
-                            <h3>&DownArrow; <span id="min-temp-2">X</span> &deg;C</h3>
-                            <h3>H:<span id="humidity-2"> X</span>%</h3>
-                            <h3>S: <span id="wind-2"> X</span> Kmph</h3>
-                            <h3>WD: <span id="wind-deg-2"> X</span> &deg;</h3>
-                            <h3>P: <span id="pressure-2"> X</span> mb</h3>
-                      </div>
-                      </div>
-                      
-                   </div>
-               </div>
-   
-               <div class="temp-card" id="thursday-card">
-                   <h3 class="day" id="day-3">Thursday</h3>
-                   <div class="monday-temp">
-                      <div class="temp-log">
-                        <h1 ><span id="temp-3"></span>&deg;C</h1>
-                          <img src="#" id="img-3">
-                          <div class="add-other">
-                            <h3 >&UpArrow; <span id="max-temp-3">X</span> &deg;C</h3>
-                            <h3>&DownArrow; <span id="min-temp-3">X</span> &deg;C</h3>
-                            <h3>H:<span id="humidity-3"> X</span>%</h3>
-                            <h3>S: <span id="wind-3"> X</span> Kmph</h3>
-                            <h3>WD: <span id="wind-deg-3"> X</span> &deg;</h3>
-                            <h3>P: <span id="pressure-3"> X</span> mb</h3>
-                      </div>
-                      </div>
-                      
-                   </div>
-               </div>
-   
-               <div class="temp-card" id="friday-card">
-                   <h3 class="day" id="day-4">Friday</h3>
-                   <div class="monday-temp">
-                      <div class="temp-log">
-                        <h1 ><span id="temp-4"></span>&deg;C</h1>
-                          <img src="#" id="img-4">
-                          <div class="add-other">
-                            <h3 >&UpArrow; <span id="max-temp-4">X</span> &deg;C</h3>
-                            <h3>&DownArrow; <span id="min-temp-4">X</span> &deg;C</h3>
-                            <h3>H:<span id="humidity-4"> X</span>%</h3>
-                            <h3>S: <span id="wind-4"> X</span> Kmph</h3>
-                            <h3>WD: <span id="wind-deg-4"> X</span> &deg;</h3>
-                            <h3>P: <span id="pressure-4"> X</span> mb</h3>
-                      </div>
-                      </div>
-                      
-                   </div>
-               </div>
-   
-               <div class="temp-card" id="saturday-card">
-                   <h3 class="day" id="day-5">Saturday</h3>
-                   <div class="monday-temp">
-                      <div class="temp-log">
-                        <h1 ><span id="temp-5"></span>&deg;C</h1>
-                          <img src="#" id="img-5">
-                          <div class="add-other">
-                            <h3 >&UpArrow; <span id="max-temp-5">X</span> &deg;C</h3>
-                            <h3>&DownArrow; <span id="min-temp-5">X</span> &deg;C</h3>
-                            <h3>H:<span id="humidity-5"> X</span>%</h3>
-                            <h3>S: <span id="wind-5"> X</span> Kmph</h3>
-                            <h3>WD: <span id="wind-deg-5"> X</span> &deg;</h3>
-                            <h3>P: <span id="pressure-5"> X</span> mb</h3>
-                      </div>
-                      </div>
-                      
-                   </div>
-               </div>
-   
-               <div class="temp-card" id="sunday-card">
-                   <h3 class="day" id="day-6">Sunday</h3>
-                   <div class="monday-temp">
-                      <div class="temp-log">
-                        <h1 ><span id="temp-6"></span>&deg;C</h1>
-                          <img src="#" id="img-6">
-                          <div class="add-other">
-                            <h3 >&UpArrow; <span id="max-temp-6">X</span> &deg;C</h3>
-                            <h3>&DownArrow; <span id="min-temp-6">X</span> &deg;C</h3>
-                            <h3>H:<span id="humidity-6"> X</span>%</h3>
-                            <h3>S: <span id="wind-6"> X</span> Kmph</h3>
-                            <h3>WD: <span id="wind-deg-6"> X</span> &deg;</h3>
-                            <h3>P: <span id="pressure-6"> X</span> mb</h3>
-                      </div>
-                      </div>
-                      
-                   </div>
-               </div>
-   
-               
-           </div>
-       </section>
-   
+      <div class="weather-data">
+        <!-- <div class="temp" id="temp1">
+          <h1 class="current-time">NOW</h1>
+          <img src="" alt="">
+          <h2 class="" ><span id="current-temp">72</span>&deg;</h2>
+        </div> -->
+      </div>
     </div>
-   
-    <footer class="footer-bar">
-    <h1>&copy; Copyrights 2022 Masood Akhtar Vaheed</h1>
-    </footer>
 
     <script src="script/script.js"></script>
-</body>
+  </body>
 </html>
