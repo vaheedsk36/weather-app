@@ -56,7 +56,11 @@
           </div>
 
           <div class="temperature">
-            <h1><span class="current-temp">72</span>&deg;</h1>
+            <div class="unit-conv">
+              <button class="celsius unit-active">C</button>
+              <button class="farenheit">F</button>
+            </div>
+            <h1><span class="current-temp">72</span></h1>
             <h3>
               <span class="cur-max-temp">81</span>&deg; /
               <span class="cur-min-temp">50</span>&deg;
@@ -64,15 +68,21 @@
           </div>
         </div>
       </div>
+      <div class="drop-down">
+        <ul>
+          <li>&#10247;<a href="" class="drop-down-header">Monday</a></li>
+        </ul>
+      </div>
+
       <div class="details-navigator">
         <ul class="details-bar">
-          <li class="nav-col"><a href="" id="day0">Monday</a></li>
-          <li class="nav-col"><a href="" id="day1">Tuesday</a></li>
-          <li class="nav-col"><a href="" id="day2">Wednesday</a></li>
-          <li class="nav-col"><a href="" id="day3">Thursday</a></li>
-          <li class="nav-col"><a href="" id="day4">Friday</a></li>
-          <li class="nav-col"><a href="" id="day5">Saturday</a></li>
-          <li class="nav-col"><a href="" id="day6">Sunday</a></li>
+          <li class="nav-col"><a href="" class="day0">Monday</a></li>
+          <li class="nav-col"><a href="" class="day1">Tuesday</a></li>
+          <li class="nav-col"><a href="" class="day2">Wednesday</a></li>
+          <li class="nav-col"><a href="" class="day3">Thursday</a></li>
+          <li class="nav-col"><a href="" class="day4">Friday</a></li>
+          <li class="nav-col"><a href="" class="day5">Saturday</a></li>
+          <li class="nav-col"><a href="" class="day6">Sunday</a></li>
         </ul>
       </div>
 

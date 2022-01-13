@@ -31,12 +31,13 @@ if (searchValue.length >= 3) {
       cityName.innerHTML = searchValue
         .split(" ")
         .map((element) => {
-          element.charAt(0).toUpperCase() + element.toLowerCase().substring(1);
+          return (
+            element.charAt(0).toUpperCase() + element.toLowerCase().substring(1)
+          );
         })
         .join(" ");
     }
 
-    // cityName.innerHTML = searchValue;
     const searchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${apiKey}`;
     latLongFunc(searchUrl);
   });
@@ -75,12 +76,34 @@ const curSection = (dataKey) => {
   const curTempMin = dataKey.temp.min.toFixed(0);
   const curDesc = dataKey.weather[0].description;
   const imgCode = dataKey.weather[0].icon;
+  const celsiusBtn = document.querySelector(".celsius");
+  const farenheitBtn = document.querySelector(".farenheit");
 
-  Temperature.innerHTML = curTemp;
-  tempMax.innerHTML = curTempMax;
-  tempMin.innerHTML = curTempMin;
+  const celsiusFn = () => {
+    Temperature.innerHTML = curTemp + "&deg;C";
+    tempMax.innerHTML = curTempMax;
+    tempMin.innerHTML = curTempMin;
+    celsiusBtn.classList.add("unit-active");
+    farenheitBtn.classList.remove("unit-active");
+  };
+
+  celsiusFn();
+
+  const farenheitFn = () => {
+    Temperature.innerHTML = ((9 / 5) * curTemp + 32).toFixed(1) + "&deg;F";
+    tempMax.innerHTML = ((9 / 5) * curTempMax + 32).toFixed(0);
+    tempMin.innerHTML = ((9 / 5) * curTempMin + 32).toFixed(0);
+    celsiusBtn.classList.remove("unit-active");
+    farenheitBtn.classList.add("unit-active");
+  };
+
+  celsiusBtn.addEventListener("click", celsiusFn);
+  farenheitBtn.addEventListener("click", farenheitFn);
 
   descImage.setAttribute("src", `./images/${imgCode}.png`);
+  document.querySelector(
+    ".current"
+  ).style.backgroundImage = `url("/images/weather-bg/${imgCode}.jpg")`;
 
   weatherDetails.innerHTML = curDesc
     .split(" ")
@@ -114,6 +137,11 @@ const curSection = (dataKey) => {
     title: "Wind Degree",
     imgPath: "./images/wind-deg.png",
   };
+  const curWindGust = {
+    Data: dataKey.wind_gust + " deg",
+    title: "Wind Gust",
+    imgPath: "./images/wind-gust.png",
+  };
 
   const curDataArr = [
     curPressure,
@@ -121,6 +149,7 @@ const curSection = (dataKey) => {
     curDewPoint,
     curWindSpeed,
     curWindDeg,
+    curWindGust,
   ];
 
   let forecastData = "";
@@ -184,7 +213,8 @@ const weatherFunc = (url) => {
         ];
         const d1 = data.daily[i].dt * 1000;
         const day = new Date(d1);
-        const weekDay = document.getElementById(`day${i}`);
+        const weekDay = document.querySelector(`.day${i}`);
+        const dropHeader = document.querySelector(".drop-down-header");
 
         weekDay.innerHTML = days[day.getDay()];
 
@@ -196,15 +226,24 @@ const weatherFunc = (url) => {
           searchBar.value = "";
           curSection(onLoadDatakey);
           document.querySelectorAll(".nav-col")[0].classList.add("active");
+          dropHeader.innerHTML = document.querySelector(".day0").text;
         };
 
         window.onload();
 
-        weekDay.addEventListener("click", (event) => {
+        const navBtnFn = (event) => {
           event.preventDefault();
           daysActiveBtn(i);
           dataKey = data.daily[i];
+          dropHeader.innerHTML = weekDay.text;
           curSection(dataKey);
+        };
+        weekDay.addEventListener("click", navBtnFn);
+        dropHeader.addEventListener("click", (event) => {
+          event.preventDefault();
+          document
+            .querySelector(".details-navigator")
+            .classList.toggle("nav-activator");
         });
       }
     });
