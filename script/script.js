@@ -103,7 +103,7 @@ const curSection = (dataKey) => {
   descImage.setAttribute("src", `./images/${imgCode}.png`);
   document.querySelector(
     ".current"
-  ).style.backgroundImage = `url("/images/weather-bg/${imgCode}.jpg")`;
+  ).style.backgroundImage = `url("./images/weather-bg/${imgCode}.jpg")`;
 
   weatherDetails.innerHTML = curDesc
     .split(" ")
