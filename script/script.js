@@ -168,7 +168,7 @@ const curSection = (dataKey) => {
 // IP to location api function  -- Step(1) (Default) -- When page is loaded
 
 const ip2Location = () => {
-  fetch("http://ip-api.com/json/")
+  fetch("https://ipinfo.io/json?token=77d604e88599f2")
     .then((response) => response.json())
     .then((data) => {
       cityName.innerHTML = data.city;
