@@ -125,7 +125,7 @@ body {
 }
 
 .current {
-  background-image: url("/images/BG.png");
+  /* background-image: url("/images/BG.png"); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

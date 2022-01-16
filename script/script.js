@@ -1,10 +1,8 @@
 const findButton = document.querySelector(".search-btn");
-const searchBar = document.querySelector("#search-bar");
-const searchLocation = document.querySelector(".location");
+const searchBar = document.querySelector(".search-bar");
 const apiKey = "87a2330723d8868a134cfb33f1e32e0a";
 const units = "metric";
 const cityName = document.querySelector(".city");
-// const urlLatLong = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
 const hamburgerBtn = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const hamburgerBars = document.querySelector(".bar");
@@ -16,32 +14,11 @@ const tempMin = document.querySelector(".cur-min-temp");
 const searchValue = searchBar.value;
 const daysBtn = document.querySelectorAll(".nav-col");
 
-// Hamburger button code
+// Responsive hamburger button code
 hamburgerBtn.addEventListener("click", () => {
   hamburgerBtn.classList.toggle("active");
   navMenu.classList.toggle("active");
 });
-
-if (searchValue.length >= 3) {
-  findButton.addEventListener("click", () => {
-    if (searchValue.split(" ").length === 1) {
-      cityName.innerHTML =
-        searchValue.slice(0, 1).toUpperCase() + searchValue.substring(1);
-    } else {
-      cityName.innerHTML = searchValue
-        .split(" ")
-        .map((element) => {
-          return (
-            element.charAt(0).toUpperCase() + element.toLowerCase().substring(1)
-          );
-        })
-        .join(" ");
-    }
-
-    const searchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${apiKey}`;
-    latLongFunc(searchUrl);
-  });
-}
 
 // function to change days navigator button color on click
 
@@ -67,8 +44,6 @@ const daysActiveBtn = (i) => {
   }
 };
 
-// Current Section Function -- displays all the weather details steps stuff  -- (step-04)
-
 const curSection = (dataKey) => {
   const weatherDetails = document.querySelector(".weather-details");
   const curTemp = dataKey.temp.day.toFixed(1);
@@ -89,7 +64,7 @@ const curSection = (dataKey) => {
 
   celsiusFn();
 
-  const farenheitFn = () => {
+  const farenheitFn = (event) => {
     Temperature.innerHTML = ((9 / 5) * curTemp + 32).toFixed(1) + "&deg;F";
     tempMax.innerHTML = ((9 / 5) * curTempMax + 32).toFixed(0);
     tempMin.innerHTML = ((9 / 5) * curTempMin + 32).toFixed(0);
@@ -103,7 +78,7 @@ const curSection = (dataKey) => {
   descImage.setAttribute("src", `./images/${imgCode}.png`);
   document.querySelector(
     ".current"
-  ).style.backgroundImage = `url("/images/weather-bg/${imgCode}.jpg")`;
+  ).style.backgroundImage = `url("./images/weather-bg/${imgCode}.jpg")`;
 
   weatherDetails.innerHTML = curDesc
     .split(" ")
@@ -171,6 +146,8 @@ const ip2Location = () => {
   fetch("https://ipinfo.io/json?token=77d604e88599f2")
     .then((response) => response.json())
     .then((data) => {
+      // Here the city name will be by default in sentence case because the data from api itself gives it in such format
+
       cityName.innerHTML = data.city;
       const urlLatLong = `https://api.openweathermap.org/data/2.5/weather?q=${data.city}&appid=${apiKey}`;
 
@@ -179,6 +156,48 @@ const ip2Location = () => {
 };
 
 ip2Location();
+
+// Search location function when the the search bar is triggered it is executed
+
+const searchLocation = (value1) => {
+  const urlLatLong = `https://api.openweathermap.org/data/2.5/weather?q=${value1}&appid=${apiKey}`;
+
+  latLongFunc(urlLatLong);
+};
+
+// This function changes the city name to sentence case
+const cityNameChanger = () => {
+  if (searchBar.value.split(" ").length === 1) {
+    cityName.innerHTML =
+      searchBar.value.slice(0, 1).toUpperCase() + searchBar.value.substring(1);
+  } else {
+    cityName.innerHTML = searchBar.value
+      .split(" ")
+      .map((element) => {
+        return (
+          element.charAt(0).toUpperCase() + element.toLowerCase().substring(1)
+        );
+      })
+      .join(" ");
+  }
+};
+
+// This function triggers the activates the searchLocation function when clicked on the find button
+
+findButton.addEventListener("click", () => {
+  console.log(searchBar.value);
+  searchLocation(searchBar.value);
+  cityNameChanger();
+});
+
+// This function triggers the activates the searchLocation function when enter button is clicked in the searchbar
+
+searchBar.addEventListener("keydown", (event) => {
+  if (event.code === "Enter") {
+    searchLocation(searchBar.value);
+    cityNameChanger();
+  }
+});
 
 // City name to latitude and longitude extractor function  -- Step(2)
 
@@ -231,14 +250,14 @@ const weatherFunc = (url) => {
 
         window.onload();
 
-        const navBtnFn = (event) => {
+        weekDay.addEventListener("click", (event) => {
           event.preventDefault();
           daysActiveBtn(i);
           dataKey = data.daily[i];
           dropHeader.innerHTML = weekDay.text;
           curSection(dataKey);
-        };
-        weekDay.addEventListener("click", navBtnFn);
+        });
+
         dropHeader.addEventListener("click", (event) => {
           event.preventDefault();
           document
