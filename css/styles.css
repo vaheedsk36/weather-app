@@ -9,8 +9,9 @@
   --card-color: rgba(53, 53, 83, 0.548);
   --card-even: rgba(28, 28, 49, 0.548);
   --nav-bar-blue: #19191970;
-  --search-bar-blue: #958c8c9a;
-  --btn-color: #0274d8b6;
+  --search-bar-blue: #f8f4f411;
+  /* --btn-color: #0274d8b; */
+  --btn-color: #0000001c;
   --temp-card-color: rgba(143, 143, 146, 0.548);
 }
 
@@ -21,7 +22,11 @@ html {
 }
 
 body {
-  background: black;
+  background: #c94b4b;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
   margin: 0;
 }
 
@@ -29,7 +34,7 @@ body {
   top: 0;
   margin-top: 0;
   height: 6rem;
-  background-color: rgba(100, 97, 97, 0.322);
+  background-color: rgba(10, 10, 10, 0.233);
 }
 
 .container {
@@ -73,7 +78,7 @@ body {
   text-align: center;
   border-radius: 2rem;
   justify-content: stretch;
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.048);
   border-radius: 2rem;
   padding: 6px;
   display: grid;
@@ -122,7 +127,105 @@ body {
   width: 60%;
   margin: 3rem auto;
   border-radius: 20px;
+  box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.151),
+  -10px 10px 10px rgba(0, 0, 0, 0.151),
+  10px -10px 10px rgba(0, 0, 0, 0.151),
+  10px 10px 10px rgba(0, 0, 0, 0.151);
+
 }
+
+.location-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-div img{
+  width: 3rem;
+  height: 3.5rem;
+
+}
+
+h3.date-time{
+  font-size: 2rem;
+}
+
+
+
+h1 span.day-temp{
+
+  font-size: 8rem;
+  border-right: 5px solid white;
+  padding-right: 1rem;
+}
+
+.day-night-temp{
+
+  display: flex;
+}
+
+.min-max-temp{
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.min-max-temp-sub{
+margin-left: 10px;
+padding: 0;
+  
+  
+}
+
+.min-max-temp img{
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+div.temp-day-night{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.288);
+  border-radius: 20px;
+}
+
+
+
+
+
+
+.temp-night-container{
+  display: flex;
+  border-radius: 0 0 0 10px;
+  /* background-color: rgba(140, 0, 255, 0.212); */
+  align-items: center;
+}
+
+h1.temp-night-container{
+  margin: 0;
+}
+
+.temp-day-container, .temp-night-container{
+  display: flex; 
+  margin: 10px 0;
+  align-items: center;
+
+}
+
+.temp-day-container img, .temp-night-container img{
+  width: 3rem;
+  height: 3rem;
+  margin: 0 10px;
+
+}
+
+
+
+
+
+
 
 .current {
   /* background-image: url("/images/BG.png"); */
@@ -148,17 +251,17 @@ h1.current-time {
   display: flex;
   flex-wrap: wrap;
   justify-content: right;
-  margin: 0;
+  margin-bottom: 2rem;
 }
 .unit-conv button {
-  font-size: 1rem;
+  font-size: 1.5rem;
   transition: 0.3s;
   cursor: pointer;
 }
 
 button.celsius {
   border: none;
-  border-radius: 5px 0 0 5px;
+  border-radius: 10px 0 0 10px;
   margin-right: 1px;
 }
 
@@ -173,27 +276,13 @@ button.celsius:hover {
 button.farenheit {
   border: none;
 
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 10px 10px 0;
 }
 
 button.farenheit:hover {
   transform: translateY(-1px) translateX(1px);
 }
 
-.temperature {
-  /* border: 2px solid red; */
-  text-align: right;
-}
-
-.temperature h1 {
-  margin: 0;
-  font-size: 7rem;
-}
-
-.temperature h3 {
-  margin: 0 20px;
-  font-size: 2rem;
-}
 
 .current-weather {
   /* border: 2px solid red; */

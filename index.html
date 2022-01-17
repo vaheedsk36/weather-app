@@ -46,7 +46,9 @@
         <div class="current-forecast">
           <div class="current-weather">
             <div class="city-date">
-              <h1 class="city"></h1>
+              <div class="location-div">
+                <img src="images/location.png"><h1 class="city"></h1>
+              </div>
               <h3 class="date-time">September 25,2021</h3>
             </div>
             <div class="weather-image">
@@ -60,11 +62,25 @@
               <button class="celsius unit-active">C</button>
               <button class="farenheit">F</button>
             </div>
-            <h1><span class="current-temp">72</span></h1>
-            <h3>
-              <span class="cur-max-temp">81</span>&deg; /
-              <span class="cur-min-temp">50</span>&deg;
-            </h3>
+            
+            <div class="day-night-temp">
+              <h1><span class="day-temp">72</span></h1>
+
+              <div class="min-max-temp">
+                <div class="min-max-temp-sub"><h1 class="cur-max-temp">81</h1></div>
+                <div class="min-max-temp-sub"><h1 class="cur-min-temp">50</h1></div>
+              </div>
+              
+            </div>
+
+            <div class="temp-day-night">
+              <h1 class="temp-day-container"><img src="images/day.png"><span class="morning-temp">72</span></h1>
+              <h1 class="temp-night-container"><img src="images/night.png"><span class="night-temp">72</span></h1>
+          </div>
+
+            
+
+
           </div>
         </div>
       </div>

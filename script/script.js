@@ -8,11 +8,14 @@ const navMenu = document.querySelector(".nav-menu");
 const hamburgerBars = document.querySelector(".bar");
 const weatherData = document.querySelector(".weather-data");
 const descImage = document.getElementById("descImg");
-const Temperature = document.querySelector(".current-temp");
+const dayTemp = document.querySelector(".day-temp");
+const morningTemp = document.querySelector(".morning-temp");
+const nightTemp = document.querySelector(".night-temp");
 const tempMax = document.querySelector(".cur-max-temp");
 const tempMin = document.querySelector(".cur-min-temp");
 const searchValue = searchBar.value;
 const daysBtn = document.querySelectorAll(".nav-col");
+const dateTime = document.querySelector(".date-time");
 
 // Responsive hamburger button code
 hamburgerBtn.addEventListener("click", () => {
@@ -47,17 +50,24 @@ const daysActiveBtn = (i) => {
 const curSection = (dataKey) => {
   const weatherDetails = document.querySelector(".weather-details");
   const curTemp = dataKey.temp.day.toFixed(1);
+  const morning = dataKey.temp.morn.toFixed(1);
+  const night = dataKey.temp.night.toFixed(1);
   const curTempMax = dataKey.temp.max.toFixed(0);
   const curTempMin = dataKey.temp.min.toFixed(0);
   const curDesc = dataKey.weather[0].description;
   const imgCode = dataKey.weather[0].icon;
   const celsiusBtn = document.querySelector(".celsius");
   const farenheitBtn = document.querySelector(".farenheit");
+  // const unitType = document.querySelector(".units")
 
   const celsiusFn = () => {
-    Temperature.innerHTML = curTemp + "&deg;C";
-    tempMax.innerHTML = curTempMax;
-    tempMin.innerHTML = curTempMin;
+    dayTemp.innerHTML = curTemp+"&deg;";
+    morningTemp.innerHTML = morning+"&deg;";
+    nightTemp.innerHTML = night+"&deg;";
+    tempMax.innerHTML = curTempMax+"&deg;";
+    tempMin.innerHTML = curTempMin+"&deg;";
+    // unitType.innerHTML = "&deg;C";
+
     celsiusBtn.classList.add("unit-active");
     farenheitBtn.classList.remove("unit-active");
   };
@@ -65,9 +75,12 @@ const curSection = (dataKey) => {
   celsiusFn();
 
   const farenheitFn = (event) => {
-    Temperature.innerHTML = ((9 / 5) * curTemp + 32).toFixed(1) + "&deg;F";
-    tempMax.innerHTML = ((9 / 5) * curTempMax + 32).toFixed(0);
-    tempMin.innerHTML = ((9 / 5) * curTempMin + 32).toFixed(0);
+    dayTemp.innerHTML = ((9 / 5) * curTemp + 32).toFixed(1)+"&deg;";
+    morningTemp.innerHTML = ((9 / 5) * morning + 32).toFixed(1)+"&deg;";
+    nightTemp.innerHTML = ((9 / 5) * night + 32).toFixed(1)+"&deg;";
+    tempMax.innerHTML = ((9 / 5) * curTempMax + 32).toFixed(0)+"&deg;";
+    tempMin.innerHTML = ((9 / 5) * curTempMin + 32).toFixed(0)+"&deg;";
+    // unitType.innerHTML = "&deg;F";
     celsiusBtn.classList.remove("unit-active");
     farenheitBtn.classList.add("unit-active");
   };
@@ -93,12 +106,12 @@ const curSection = (dataKey) => {
     imgPath: "./images/pressure.png",
   };
   const curHumidity = {
-    Data: dataKey.humidity + " %",
+    Data: dataKey.humidity+"%",
     title: "Humidity",
     imgPath: "./images/humidity.png",
   };
   const curDewPoint = {
-    Data: dataKey.dew_point + " %",
+    Data: dataKey.dew_point+"%",
     title: "Dew Point",
     imgPath: "./images/dew-point.png",
   };
@@ -214,6 +227,30 @@ const latLongFunc = (urlLatLong) => {
     });
 };
 
+// Date function
+
+const dateFn = (dateArg) => {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "November",
+    "December",
+  ];
+
+  const Year = dateArg.getFullYear();
+  const dateNum = dateArg.getDate();
+  const Month = months[dateArg.getMonth()];
+  dateTime.innerHTML = `${Month} ${dateNum},${Year}`;
+
+};
+
 // Main execution function  -- Step(3)
 
 const weatherFunc = (url) => {
@@ -246,6 +283,9 @@ const weatherFunc = (url) => {
           curSection(onLoadDatakey);
           document.querySelectorAll(".nav-col")[0].classList.add("active");
           dropHeader.innerHTML = document.querySelector(".day0").text;
+
+          const curDate = new Date(data.daily[0].dt * 1000);
+          dateFn(curDate);
         };
 
         window.onload();
@@ -255,6 +295,8 @@ const weatherFunc = (url) => {
           daysActiveBtn(i);
           dataKey = data.daily[i];
           dropHeader.innerHTML = weekDay.text;
+          dateFn(day);
+
           curSection(dataKey);
         });
 
