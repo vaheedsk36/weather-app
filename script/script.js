@@ -78,8 +78,8 @@ const curSection = (dataKey) => {
     dayTemp.innerHTML = ((9 / 5) * curTemp + 32).toFixed(1)+"&deg;";
     morningTemp.innerHTML = ((9 / 5) * morning + 32).toFixed(1)+"&deg;";
     nightTemp.innerHTML = ((9 / 5) * night + 32).toFixed(1)+"&deg;";
-    tempMax.innerHTML = ((9 / 5) * curTempMax + 32).toFixed(0)+"&deg;";
-    tempMin.innerHTML = ((9 / 5) * curTempMin + 32).toFixed(0)+"&deg;";
+    tempMax.innerHTML = ((9 / 5) * curTempMax + 32).toFixed(1)+"&deg;";
+    tempMin.innerHTML = ((9 / 5) * curTempMin + 32).toFixed(1)+"&deg;";
     // unitType.innerHTML = "&deg;F";
     celsiusBtn.classList.remove("unit-active");
     farenheitBtn.classList.add("unit-active");

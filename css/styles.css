@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 * {
   box-sizing: border-box;
   outline: none;
@@ -17,7 +19,7 @@
 
 html {
   font-size: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: white;
 }
 
@@ -124,8 +126,8 @@ background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, F
 }
 
 .main-container {
-  width: 60%;
-  margin: 3rem auto;
+  width: 55%;
+  margin: 6rem auto auto;
   border-radius: 20px;
   box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.151),
   -10px 10px 10px rgba(0, 0, 0, 0.151),
@@ -136,7 +138,7 @@ background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, F
 
 .location-div{
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 
@@ -147,7 +149,30 @@ background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, F
 }
 
 h3.date-time{
-  font-size: 2rem;
+  font-size: 1.5rem;
+  
+}
+
+div.weather-image{
+  width: 60%;
+  text-align: center;
+  margin-right: 0;
+  /*border-radius: 10px;*/
+  padding: 5px;
+  resize: none;
+}
+
+img#descImg{
+  width: 7.5rem;
+  margin-bottom: 1rem;
+
+
+  
+}
+
+h2.weather-details{
+  margin: 0;
+  font-size: 1.2rem;
 }
 
 
@@ -155,7 +180,6 @@ h3.date-time{
 h1 span.day-temp{
 
   font-size: 8rem;
-  border-right: 5px solid white;
   padding-right: 1rem;
 }
 
@@ -171,9 +195,22 @@ h1 span.day-temp{
   justify-content: center;
 }
 
+h1.cur-max-temp,h1.cur-min-temp{
+  margin: 0;
+  text-align: center;
+}
+
 .min-max-temp-sub{
 margin-left: 10px;
-padding: 0;
+padding: 1rem 0.8rem;
+/* border: 2px solid white; */
+/* background-color: rgba(0, 0, 0, 0.281); */
+border-radius: 100px;
+box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.151),
+  -10px 10px 10px rgba(0, 0, 0, 0.151),
+  10px -10px 10px rgba(0, 0, 0, 0.151),
+  10px 10px 10px rgba(0, 0, 0, 0.151);
+
   
   
 }
@@ -517,6 +554,7 @@ img.stock-weather-img {
 
   #descImg {
     width: 5rem;
+    text-align: center;
   }
 
   .weather-details {
