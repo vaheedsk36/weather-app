@@ -20,8 +20,8 @@ const dateTime = document.querySelector(".date-time");
 
 // Responsive hamburger button code
 hamburgerBtn.addEventListener("click", () => {
-  hamburgerBtn.classList.toggle("active");
-  navMenu.classList.toggle("active");
+  hamburgerBtn.classList.toggle("active-menu");
+  navMenu.classList.toggle("active-menu");
 });
 
 // function to change days navigator button color on click
@@ -303,6 +303,7 @@ const weatherFunc = (url) => {
           dropHeader.innerHTML = weekDay.text;
           dateFn(day);
 
+          
           curSection(dataKey);
         });
 
@@ -311,6 +312,8 @@ const weatherFunc = (url) => {
           document
             .querySelector(".details-navigator")
             .classList.toggle("nav-activator");
+
+            
         });
       }
     });

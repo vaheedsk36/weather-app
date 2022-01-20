@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,40 +7,42 @@
 }
 
 :root {
-  --bg-blue: rgb(42, 42, 51);
-
-  --card-color: rgba(53, 53, 83, 0.548);
-  --card-even: rgba(28, 28, 49, 0.548);
   --nav-bar-blue: #19191970;
   --search-bar-blue: #f8f4f411;
-  /* --btn-color: #0274d8b; */
   --btn-color: #0000001c;
-  --temp-card-color: rgba(143, 143, 146, 0.548);
 }
 
 html {
   font-size: 100%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: white;
 }
 
 body {
-  background: #c94b4b;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #c94b4b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4b134f,
+    #c94b4b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4b134f,
+    #c94b4b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   margin: 0;
 }
 
-footer{
+footer {
   background: rgba(0, 0, 0, 0.164);
-  position: absolute;
+  position: relative;
+  margin-top: 5rem;
   bottom: 0;
   width: 100%;
   padding: 1.5rem;
   font-size: 1.2rem;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   text-align: center;
 }
 
@@ -49,9 +51,8 @@ footer{
   margin-top: 0;
   height: 6rem;
   background-color: rgba(10, 10, 10, 0.233);
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 1rem;
-
 }
 
 .container {
@@ -145,30 +146,26 @@ footer{
   margin: 6rem auto auto;
   border-radius: 20px;
   box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.151),
-  -10px 10px 10px rgba(0, 0, 0, 0.151),
-  10px -10px 10px rgba(0, 0, 0, 0.151),
-  10px 10px 10px rgba(0, 0, 0, 0.151);
-
+    -10px 10px 10px rgba(0, 0, 0, 0.151), 10px -10px 10px rgba(0, 0, 0, 0.151),
+    10px 10px 10px rgba(0, 0, 0, 0.151);
 }
 
-.location-div{
+.location-div {
   display: flex;
   justify-content: left;
   align-items: center;
 }
 
-.location-div img{
+.location-div img {
   width: 3rem;
   height: 3.5rem;
-
 }
 
-h3.date-time{
+h3.date-time {
   font-size: 1.5rem;
-  
 }
 
-div.weather-image{
+div.weather-image {
   width: 60%;
   text-align: center;
   margin-right: 0;
@@ -177,135 +174,107 @@ div.weather-image{
   resize: none;
 }
 
-img#descImg{
+img#descImg {
   width: 7.5rem;
   margin-bottom: 1rem;
-
-
-  
 }
 
-h2.weather-details{
+h2.weather-details {
   margin: 0;
   font-size: 1.2rem;
 }
 
-.day-night-temp h1{
-  margin:0 ;
+.day-night-temp h1 {
+  margin: 0;
 }
 
-div.temp-dashboard{
-   display: grid;
-   justify-content: center;
-   align-items: center;
-   background-color: rgba(41, 38, 38, 0.432);
-   border-radius: 10rem;  
-   width: 20rem;
-   height: 20rem;
-   font-family: 'Orbitron', sans-serif;
+div.temp-dashboard {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(41, 38, 38, 0.432);
+  border-radius: 10rem;
+  width: 20rem;
+  height: 20rem;
+  font-family: "Orbitron", sans-serif;
 }
 
-
-h1 span.day-temp{
+h1 span.day-temp {
   font-size: 4rem;
   margin: 0;
   font-weight: 900;
-
 }
 
-
-.day-night-temp{
-
+.day-night-temp {
   display: block;
   position: relative;
   text-align: center;
-  top: -2.5rem;
-  
-  
+  top: 0.5rem;
 }
 
-.min-max-temp{
-
+.min-max-temp {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-h1.cur-max-temp,h1.cur-min-temp{
+h1.cur-max-temp,
+h1.cur-min-temp {
   font-size: 2rem;
   margin-left: 0.5rem;
   text-align: center;
   font-weight: 900;
-
 }
 
-h1.cur-max-temp{
+h1.cur-max-temp {
   color: rgb(214, 5, 5);
 }
 
-h1.cur-min-temp{
-   color: rgb(0, 255, 200);
+h1.cur-min-temp {
+  color: rgb(0, 255, 200);
 }
 
-
-.min-max-temp img{
+.min-max-temp img {
   width: 2.5rem;
   height: 2.5rem;
 }
 
-.temp-day-night{
-  
-  position: fixed;
-  
+.temp-day-night {
+  position: relative;
 }
 
 div.temp-day-main {
   position: absolute;
-  left: 8rem;
-  top: 3rem;
+  left: 4.4rem;
+  top: -4rem;
   /* display: block; */
   text-align: center;
   margin-top: 10px;
   /* margin-bottom: 30px; */
-  
-  
-  
-
 }
 
-div.temp-day-main:nth-child(1){
+div.temp-day-main:nth-child(1) {
   transform: translateX(-6rem) translateY(-2rem);
 }
 
-div.temp-day-main:nth-child(2){
+div.temp-day-main:nth-child(2) {
   transform: translateX(0rem) translateY(1rem);
 }
 
-div.temp-day-main:nth-child(3){
+div.temp-day-main:nth-child(3) {
   transform: translateX(6rem) translateY(-2rem);
 }
 
-
-div.temp-day-main h2{
+div.temp-day-main h2 {
   font-size: 1.1rem;
   margin: 0;
 }
 
-
-
-
-.temp-day-main  img{
+.temp-day-main img {
   width: 2.5rem;
   height: 2.5rem;
   margin: 0 10px;
-
 }
-
-
-
-
-
-
 
 .current {
   /* background-image: url("/images/BG.png"); */
@@ -335,7 +304,7 @@ h1.current-time {
 }
 .unit-conv button {
   font-size: 1.5rem;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   transition: 0.3s;
   cursor: pointer;
 }
@@ -363,7 +332,6 @@ button.farenheit {
 button.farenheit:hover {
   transform: translateY(-1px) translateX(1px);
 }
-
 
 .current-weather {
   /* border: 2px solid red; */
@@ -521,7 +489,7 @@ img.stock-weather-img {
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   }
 
-  .active {
+  .active-menu {
     top: 3rem;
   }
 
@@ -530,15 +498,15 @@ img.stock-weather-img {
     cursor: pointer;
   }
 
-  .hamburger.active .bar:nth-child(2) {
+  .hamburger.active-menu .bar:nth-child(2) {
     opacity: 0;
   }
 
-  .hamburger.active .bar:nth-child(1) {
+  .hamburger.active-menu .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
 
-  .hamburger.active .bar:nth-child(3) {
+  .hamburger.active-menu .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 
@@ -556,28 +524,17 @@ img.stock-weather-img {
   }
 
   .current {
-    padding: 1rem 2rem;
+    padding: 1rem;
   }
-
-  /* changes from here */
 
   .current-forecast {
     display: flex;
     justify-content: space-between;
   }
 
-  .unit-conv {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: right;
-    margin: 0;
-  }
-  .unit-conv button {
-    font-size: 1rem;
-  }
 
   .temperature {
-    /* border: 2px solid red; */
+
     text-align: right;
   }
 
@@ -596,11 +553,7 @@ img.stock-weather-img {
     font-size: 0.8rem;
   }
 
-  #descImg {
-    width: 5rem;
-    text-align: center;
-  }
-
+  
   .weather-details {
     font-size: 1rem;
   }
@@ -677,11 +630,6 @@ img.stock-weather-img {
     font-size: 1rem;
   }
 
-  .active {
-    border-bottom: none;
-    border-radius: 0;
-  }
-
   .nav-col {
   }
 
@@ -714,6 +662,94 @@ img.stock-weather-img {
 
     /* border: 2px solid red; */
   }
+
+  h3.date-time{
+    font-size: 1rem;
+  }
+
+  img#descImg {
+    width: 5rem;
+  }
+
+  h2.weather-details {
+    font-size: 1rem;
+  }
+
+  div.temp-dashboard {
+    
+    border-radius: 10rem;
+    width: 12.5rem;
+    height: 12.5rem;
+  }
+
+  h1 span.day-temp {
+    font-size: 2.5rem;
+  margin-top: 0;
+
+  }
+
+  .day-night-temp {
+    top: -2rem;
+    
+  }
+
+  h1.cur-max-temp,
+h1.cur-min-temp {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+}
+
+div.temp-day-main {
+  left: 2.3rem;
+  top: -4rem;
+}
+
+div.temp-day-main:nth-child(1) {
+  transform: translateX(-3.5rem) translateY(-0.6rem);
+}
+
+div.temp-day-main:nth-child(2) {
+  transform: translateX(0rem) translateY(0.6rem);
+}
+
+div.temp-day-main:nth-child(3) {
+  transform: translateX(3.5rem) translateY(-0.6rem);
+}
+
+
+div.temp-day-main h2 {
+  font-size: 0.8rem;
+}
+
+.temp-day-main img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.unit-conv button {
+  font-size: 1rem;
+}
+
+button.celsius,button.farenheit {
+  border-radius: 5px 0 0 5px;
+}
+
+button.farenheit {
+  border-radius: 0 5px 5px 0;
+}
+
+
+footer {
+ 
+  font-size: 0.75rem;
+}
+
+
+
+
+
+  
+
 }
 
 /* 600-981px*/
