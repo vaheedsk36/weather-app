@@ -9,6 +9,7 @@ const hamburgerBars = document.querySelector(".bar");
 const weatherData = document.querySelector(".weather-data");
 const descImage = document.getElementById("descImg");
 const dayTemp = document.querySelector(".day-temp");
+const eveningTemp = document.querySelector(".evening-temp");
 const morningTemp = document.querySelector(".morning-temp");
 const nightTemp = document.querySelector(".night-temp");
 const tempMax = document.querySelector(".cur-max-temp");
@@ -51,6 +52,8 @@ const curSection = (dataKey) => {
   const weatherDetails = document.querySelector(".weather-details");
   const curTemp = dataKey.temp.day.toFixed(1);
   const morning = dataKey.temp.morn.toFixed(1);
+  const evening = dataKey.temp.eve.toFixed(1);
+
   const night = dataKey.temp.night.toFixed(1);
   const curTempMax = dataKey.temp.max.toFixed(0);
   const curTempMin = dataKey.temp.min.toFixed(0);
@@ -63,6 +66,7 @@ const curSection = (dataKey) => {
   const celsiusFn = () => {
     dayTemp.innerHTML = curTemp+"&deg;";
     morningTemp.innerHTML = morning+"&deg;";
+    eveningTemp.innerHTML = evening+"&deg;";
     nightTemp.innerHTML = night+"&deg;";
     tempMax.innerHTML = curTempMax+"&deg;";
     tempMin.innerHTML = curTempMin+"&deg;";
@@ -78,6 +82,8 @@ const curSection = (dataKey) => {
     dayTemp.innerHTML = ((9 / 5) * curTemp + 32).toFixed(1)+"&deg;";
     morningTemp.innerHTML = ((9 / 5) * morning + 32).toFixed(1)+"&deg;";
     nightTemp.innerHTML = ((9 / 5) * night + 32).toFixed(1)+"&deg;";
+    eveningTemp.innerHTML = ((9 / 5) * evening + 32).toFixed(1)+"&deg;";
+
     tempMax.innerHTML = ((9 / 5) * curTempMax + 32).toFixed(1)+"&deg;";
     tempMin.innerHTML = ((9 / 5) * curTempMin + 32).toFixed(1)+"&deg;";
     // unitType.innerHTML = "&deg;F";
