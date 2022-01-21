@@ -230,7 +230,7 @@ h1.cur-min-temp {
 }
 
 h1.cur-max-temp {
-  color: rgb(214, 5, 5);
+  color: rgb(255, 76, 106);
 }
 
 h1.cur-min-temp {
@@ -407,7 +407,6 @@ li.nav-col a {
 
 .temp {
   margin: 1rem 0.2rem;
-  /* border: 2px solid red; */
 
   border-radius: 20px;
   padding: 10px;
@@ -431,8 +430,6 @@ img.stock-weather-img {
   height: 5rem;
   background-color: rgba(0, 0, 0, 0.171);
   border-radius: 10px;
-
-  /* border: 2px solid red; */
 }
 
 /* for all the devices having width less than or equal to 411px*/
