@@ -38,7 +38,7 @@ footer {
   background: rgba(0, 0, 0, 0.164);
   position: relative;
   margin-top: 5rem;
-  bottom: 0;
+  bottom: -1rem;
   width: 100%;
   padding: 1.5rem;
   font-size: 1.2rem;
@@ -57,7 +57,7 @@ footer {
 
 .container {
   width: 100%;
-  margin: 0 1rem;
+  margin: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
