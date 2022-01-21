@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
+    <title>Vatawaran | Weather App</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -20,7 +21,6 @@
             class="search-bar"
             name="search-content"
             placeholder="Find your location"
-            
           />
           <button class="search-btn">Find</button>
         </div>
@@ -28,8 +28,18 @@
         <div>
           <ul class="nav-menu">
             <li><a href="#">Home</a></li>
-            <li><a href="https://github.com/vaheedsk36/weather-app" target = _blank>Source Code</a></li>
-            <li><a href="https://vaheedsk36.herokuapp.com/" target = _blank>Portfolio</a></li>
+            <li>
+              <a
+                href="https://github.com/vaheedsk36/weather-app"
+                target="_blank"
+                >Source Code</a
+              >
+            </li>
+            <li>
+              <a href="https://vaheedsk36.herokuapp.com/" target="_blank"
+                >Portfolio</a
+              >
+            </li>
           </ul>
         </div>
 
@@ -47,12 +57,13 @@
           <div class="current-weather">
             <div class="city-date">
               <div class="location-div">
-                <img src="images/location.png"><h1 class="city"></h1>
+                <img src="images/location.png" />
+                <h1 class="city"></h1>
               </div>
               <h3 class="date-time">September 25,2021</h3>
             </div>
             <div class="weather-image">
-              <img id="descImg"/>
+              <img id="descImg" />
               <h2 class="weather-details">Cloudy</h2>
             </div>
           </div>
@@ -62,33 +73,36 @@
               <button class="celsius unit-active">C</button>
               <button class="farenheit">F</button>
             </div>
-            
+
             <div class="temp-dashboard">
-
               <div class="day-night-temp">
-
                 <div class="min-max-temp">
-                  <div class="min-max-temp-sub"><h1 class="cur-max-temp">81</h1></div>
-                  <div class="min-max-temp-sub"><h1 class="cur-min-temp">50</h1></div>
+                  <div class="min-max-temp-sub">
+                    <h1 class="cur-max-temp">81</h1>
+                  </div>
+                  <div class="min-max-temp-sub">
+                    <h1 class="cur-min-temp">50</h1>
+                  </div>
                 </div>
 
                 <h1><span class="day-temp">72</span></h1>
-  
+              </div>
+
+              <div class="temp-day-night">
+                <div class="temp-day-main temp-day-container">
+                  <img src="images/day.png" />
+                  <h2 class="morning-temp">M</h2>
+                </div>
+                <div class="temp-day-main temp-afternoon-container">
+                  <img src="images/evening.png" />
+                  <h2 class="evening-temp">A</h2>
+                </div>
+                <div class="temp-day-main temp-night-container">
+                  <img src="images/night.png" />
+                  <h2 class="night-temp">N</h2>
+                </div>
+              </div>
             </div>
-
-            <div class="temp-day-night">
-              <div class="temp-day-main temp-day-container"><img src="images/day.png"><h2 class="morning-temp">M</h2></div>
-              <div class="temp-day-main temp-afternoon-container"><img src="images/evening.png"><h2 class="evening-temp">A</h2></div>
-              <div class="temp-day-main temp-night-container"><img src="images/night.png"><h2 class="night-temp">N</h2></div>
-
-          </div>
-
-            </div>
-
-
-            
-
-
           </div>
         </div>
       </div>
@@ -119,7 +133,10 @@
       </div>
     </div>
 
-    <footer>This project is designed by Masood Akhtar Vaheed. Opensourced for non-commercial purposes only.</footer>
+    <footer>
+      Project by Masood Akhtar Vaheed, Opensourced for
+      non-commercial purposes only.
+    </footer>
 
     <script src="script/script.js"></script>
   </body>

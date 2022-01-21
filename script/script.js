@@ -17,11 +17,23 @@ const tempMin = document.querySelector(".cur-min-temp");
 const searchValue = searchBar.value;
 const daysBtn = document.querySelectorAll(".nav-col");
 const dateTime = document.querySelector(".date-time");
+const dropHeader = document.querySelector(".drop-down-header");
+const detailsNavigator = document.querySelector(".details-navigator");
 
 // Responsive hamburger button code
 hamburgerBtn.addEventListener("click", () => {
   hamburgerBtn.classList.toggle("active-menu");
   navMenu.classList.toggle("active-menu");
+});
+
+// codeblock for dropdown button
+dropHeader.addEventListener("click", (event) => {
+  event.preventDefault();
+  detailsNavigator.classList.toggle("nav-activator");
+
+  document.querySelector(".weather-data").addEventListener("click", () => {
+    detailsNavigator.classList.remove("nav-activator");
+  });
 });
 
 // function to change days navigator button color on click
@@ -61,17 +73,14 @@ const curSection = (dataKey) => {
   const imgCode = dataKey.weather[0].icon;
   const celsiusBtn = document.querySelector(".celsius");
   const farenheitBtn = document.querySelector(".farenheit");
-  // const unitType = document.querySelector(".units")
 
   const celsiusFn = () => {
-    dayTemp.innerHTML = curTemp+"&deg;";
-    morningTemp.innerHTML = morning+"&deg;";
-    eveningTemp.innerHTML = evening+"&deg;";
-    nightTemp.innerHTML = night+"&deg;";
-    tempMax.innerHTML = curTempMax+"&deg;";
-    tempMin.innerHTML = curTempMin+"&deg;";
-    // unitType.innerHTML = "&deg;C";
-
+    dayTemp.innerHTML = curTemp + "&deg;";
+    morningTemp.innerHTML = morning + "&deg;";
+    eveningTemp.innerHTML = evening + "&deg;";
+    nightTemp.innerHTML = night + "&deg;";
+    tempMax.innerHTML = curTempMax + "&deg;";
+    tempMin.innerHTML = curTempMin + "&deg;";
     celsiusBtn.classList.add("unit-active");
     farenheitBtn.classList.remove("unit-active");
   };
@@ -79,14 +88,12 @@ const curSection = (dataKey) => {
   celsiusFn();
 
   const farenheitFn = (event) => {
-    dayTemp.innerHTML = ((9 / 5) * curTemp + 32).toFixed(1)+"&deg;";
-    morningTemp.innerHTML = ((9 / 5) * morning + 32).toFixed(1)+"&deg;";
-    nightTemp.innerHTML = ((9 / 5) * night + 32).toFixed(1)+"&deg;";
-    eveningTemp.innerHTML = ((9 / 5) * evening + 32).toFixed(1)+"&deg;";
-
-    tempMax.innerHTML = ((9 / 5) * curTempMax + 32).toFixed(1)+"&deg;";
-    tempMin.innerHTML = ((9 / 5) * curTempMin + 32).toFixed(1)+"&deg;";
-    // unitType.innerHTML = "&deg;F";
+    dayTemp.innerHTML = ((9 / 5) * curTemp + 32).toFixed(1) + "&deg;";
+    morningTemp.innerHTML = ((9 / 5) * morning + 32).toFixed(1) + "&deg;";
+    nightTemp.innerHTML = ((9 / 5) * night + 32).toFixed(1) + "&deg;";
+    eveningTemp.innerHTML = ((9 / 5) * evening + 32).toFixed(1) + "&deg;";
+    tempMax.innerHTML = ((9 / 5) * curTempMax + 32).toFixed(1) + "&deg;";
+    tempMin.innerHTML = ((9 / 5) * curTempMin + 32).toFixed(1) + "&deg;";
     celsiusBtn.classList.remove("unit-active");
     farenheitBtn.classList.add("unit-active");
   };
@@ -112,12 +119,12 @@ const curSection = (dataKey) => {
     imgPath: "./images/pressure.png",
   };
   const curHumidity = {
-    Data: dataKey.humidity+"%",
+    Data: dataKey.humidity + "%",
     title: "Humidity",
     imgPath: "./images/humidity.png",
   };
   const curDewPoint = {
-    Data: dataKey.dew_point+"%",
+    Data: dataKey.dew_point + "%",
     title: "Dew Point",
     imgPath: "./images/dew-point.png",
   };
@@ -254,7 +261,6 @@ const dateFn = (dateArg) => {
   const dateNum = dateArg.getDate();
   const Month = months[dateArg.getMonth()];
   dateTime.innerHTML = `${Month} ${dateNum},${Year}`;
-
 };
 
 // Main execution function  -- Step(3)
@@ -276,7 +282,6 @@ const weatherFunc = (url) => {
         const d1 = data.daily[i].dt * 1000;
         const day = new Date(d1);
         const weekDay = document.querySelector(`.day${i}`);
-        const dropHeader = document.querySelector(".drop-down-header");
 
         weekDay.innerHTML = days[day.getDay()];
 
@@ -302,18 +307,7 @@ const weatherFunc = (url) => {
           dataKey = data.daily[i];
           dropHeader.innerHTML = weekDay.text;
           dateFn(day);
-
-          
           curSection(dataKey);
-        });
-
-        dropHeader.addEventListener("click", (event) => {
-          event.preventDefault();
-          document
-            .querySelector(".details-navigator")
-            .classList.toggle("nav-activator");
-
-            
         });
       }
     });
