@@ -432,10 +432,539 @@ img.stock-weather-img {
   border-radius: 10px;
 }
 
+/* <340px*/
+
+@media only screen and (max-width: 340px) {
+  .nav-bar {
+    top: 0;
+    margin-top: 0;
+    position: sticky;
+    height: 4rem;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .logo img {
+    margin: auto;
+    width: 5rem;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: 0;
+    top: -100%;
+    flex-direction: column;
+    background-color: var(--nav-bar-blue);
+    width: 100%;
+    text-align: center;
+    transition: 0.5s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .active-menu {
+    top: 3rem;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger.active-menu .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active-menu .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active-menu .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .search-menu {
+    height: 2.5rem;
+    width: 60%;
+    padding: 3px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+  }
+
+  .main-container {
+    width: 98%;
+    margin: 1rem auto;
+  }
+
+  .current {
+    padding: 1rem;
+  }
+
+  .current-forecast {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .temperature {
+    text-align: right;
+  }
+
+  .temperature h1 {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+  }
+
+  .temperature h3 {
+    margin: 1rem 20px;
+    font-size: 1rem;
+  }
+
+  .city,
+  .city-date {
+    font-size: 0.7rem;
+  }
+
+  .weather-details {
+    font-size: 1rem;
+  }
+
+  .drop-down {
+    display: block;
+    margin: 0;
+  }
+
+  .drop-down ul {
+    padding-left: 0px;
+    text-align: left;
+    margin: 0;
+  }
+
+  .drop-down ul li {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .drop-down ul li a {
+    color: white;
+    padding: 5px;
+
+    text-decoration: none;
+  }
+
+  .details-navigator {
+    position: absolute;
+    display: none;
+    margin: 0;
+    /* border-radius: 10px; */
+    width: 40%;
+  }
+
+  .nav-activator {
+    display: block;
+    transition: ease-out;
+  }
+
+  .details-bar {
+    text-align: center;
+
+    margin: 0;
+    display: block;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .details-bar li {
+    padding: 8px;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .details-bar li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .weather-data {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: space-between;
+  }
+
+  .temp {
+    margin: 1rem auto;
+    border-radius: 20px;
+    padding: 8px;
+    width: 80%;
+  }
+
+  .temp h1 {
+    font-size: 1rem;
+  }
+  .temp h2 {
+    font-size: 1rem;
+    margin-bottom: 0px;
+  }
+
+  img.stock-weather-img {
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(0, 0, 0, 0.171);
+    border-radius: 10px;
+  }
+
+  h3.date-time {
+    font-size: 0.8rem;
+  }
+
+  img#descImg {
+    width: 5rem;
+  }
+
+  h2.weather-details {
+    font-size: 0.8rem;
+  }
+
+  div.temp-dashboard {
+    border-radius: 10rem;
+    width: 11rem;
+    height: 11rem;
+  }
+
+  h1 span.day-temp {
+    font-size: 1.8rem;
+    margin-top: 0;
+  }
+
+  .day-night-temp {
+    top: -3rem;
+  }
+
+  h1.cur-max-temp,
+  h1.cur-min-temp {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+  }
+
+  div.temp-day-main {
+    left: 3.9rem;
+    top: 0.2rem;
+  }
+
+  div.temp-day-main:nth-child(1) {
+    transform: translateX(-3rem) translateY(-0.6rem);
+  }
+
+  div.temp-day-main:nth-child(2) {
+    transform: translateX(0rem) translateY(0.6rem);
+  }
+
+  div.temp-day-main:nth-child(3) {
+    transform: translateX(3rem) translateY(-0.6rem);
+  }
+
+  div.temp-day-main h2 {
+    font-size: 0.8rem;
+  }
+
+  .temp-day-main img {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .unit-conv button {
+    font-size: 1rem;
+  }
+
+  button.celsius,
+  button.farenheit {
+    border-radius: 5px 0 0 5px;
+  }
+
+  button.farenheit {
+    border-radius: 0 5px 5px 0;
+  }
+
+  footer {
+    font-size: 0.7rem;
+  }
+}
+
+
+/* For devices range between 340px - 369px*/
+
+@media only screen and (min-width: 340px) and (max-width: 369px) {
+  .nav-bar {
+    top: 0;
+    margin-top: 0;
+    position: sticky;
+    height: 4rem;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .logo img {
+    margin: auto;
+    width: 5rem;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: 0;
+    top: -100%;
+    flex-direction: column;
+    background-color: var(--nav-bar-blue);
+    width: 100%;
+    text-align: center;
+    transition: 0.5s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .active-menu {
+    top: 3rem;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger.active-menu .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active-menu .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active-menu .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .search-menu {
+    height: 2.5rem;
+    width: 60%;
+    padding: 3px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+  }
+
+  .main-container {
+    width: 98%;
+    margin: 1rem auto;
+  }
+
+  .current {
+    padding: 1rem;
+  }
+
+  .current-forecast {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .temperature {
+    text-align: right;
+  }
+
+  .temperature h1 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .temperature h3 {
+    margin: 1rem 20px;
+    font-size: 1rem;
+  }
+
+  .city,
+  .city-date {
+    font-size: 0.8rem;
+  }
+
+  .weather-details {
+    font-size: 1rem;
+  }
+
+  .drop-down {
+    display: block;
+    margin: 0;
+  }
+
+  .drop-down ul {
+    padding-left: 0px;
+    text-align: left;
+    margin: 0;
+  }
+
+  .drop-down ul li {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .drop-down ul li a {
+    color: white;
+    padding: 5px;
+
+    text-decoration: none;
+  }
+
+  .details-navigator {
+    position: absolute;
+    display: none;
+    margin: 0;
+    /* border-radius: 10px; */
+    width: 40%;
+  }
+
+  .nav-activator {
+    display: block;
+    transition: ease-out;
+  }
+
+  .details-bar {
+    text-align: center;
+
+    margin: 0;
+    display: block;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .details-bar li {
+    padding: 8px;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .details-bar li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .weather-data {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: space-between;
+  }
+
+  .temp {
+    margin: 1rem auto;
+    border-radius: 20px;
+    padding: 8px;
+    width: 80%;
+  }
+
+  .temp h1 {
+    font-size: 1rem;
+  }
+  .temp h2 {
+    font-size: 1rem;
+    margin-bottom: 0px;
+  }
+
+  img.stock-weather-img {
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(0, 0, 0, 0.171);
+    border-radius: 10px;
+  }
+
+  h3.date-time {
+    font-size: 1rem;
+  }
+
+  img#descImg {
+    width: 5rem;
+  }
+
+  h2.weather-details {
+    font-size: 1rem;
+  }
+
+  div.temp-dashboard {
+    border-radius: 10rem;
+    width: 11rem;
+    height: 11rem;
+  }
+
+  h1 span.day-temp {
+    font-size: 1.8rem;
+    margin-top: 0;
+  }
+
+  .day-night-temp {
+    top: -3rem;
+  }
+
+  h1.cur-max-temp,
+  h1.cur-min-temp {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+  }
+
+  div.temp-day-main {
+    left: 3.9rem;
+    top: 0.2rem;
+  }
+
+  div.temp-day-main:nth-child(1) {
+    transform: translateX(-3rem) translateY(-0.6rem);
+  }
+
+  div.temp-day-main:nth-child(2) {
+    transform: translateX(0rem) translateY(0.6rem);
+  }
+
+  div.temp-day-main:nth-child(3) {
+    transform: translateX(3rem) translateY(-0.6rem);
+  }
+
+  div.temp-day-main h2 {
+    font-size: 0.8rem;
+  }
+
+  .temp-day-main img {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .unit-conv button {
+    font-size: 1rem;
+  }
+
+  button.celsius,
+  button.farenheit {
+    border-radius: 5px 0 0 5px;
+  }
+
+  button.farenheit {
+    border-radius: 0 5px 5px 0;
+  }
+
+  footer {
+    font-size: 0.7rem;
+  }
+}
+
 /* for all the devices having width less than or equal to 411px*/
 /* iphone 12/13 mini*/
 
-@media only screen and (min-width: 375px) and (max-width: 411px) {
+@media only screen and (min-width: 370px) and (max-width: 411px) {
   .nav-bar {
     top: 0;
     margin-top: 0;
